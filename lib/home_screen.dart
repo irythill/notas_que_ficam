@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'register_screen.dart';
+import '../widgets/home_button.dart';
+import '../widgets/home_logo.dart';
+import '../styles/app_colors.dart';
+import '../styles/app_fonts.dart';
 import 'login_screen.dart';
-import 'app_colors.dart';
-import 'app_fonts.dart';
+import 'register_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -17,7 +19,7 @@ class HomeScreen extends StatelessWidget {
       body: Stack(
         children: [
           Container(
-            color: AppColors.primaryColor, // Definir a cor de fundo
+            color: AppColors.primaryColor, // Definir a cor de fundo aqui
           ),
           Positioned.fill(
             child: Image.asset(
@@ -25,18 +27,11 @@ class HomeScreen extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          Column(
-            children: [
-              const SizedBox(
-                  height: 160), // Ajuste a altura conforme necessário
-              Center(
-                child: Image.asset(
-                  'assets/images/nqf_logo.png',
-                  width: 250, // Ajuste o tamanho conforme necessário
-                  height: 250, // Ajuste o tamanho conforme necessário
-                ),
-              ),
-            ],
+          const Positioned(
+            top: 160, // Ajuste a posição vertical conforme necessário
+            left: 0,
+            right: 0,
+            child: HomeLogo(),
           ),
           Padding(
             padding: const EdgeInsets.all(16.0),
@@ -54,44 +49,31 @@ class HomeScreen extends StatelessWidget {
                   style: AppTextStyles.bodyLarge,
                 ),
                 const SizedBox(height: 50),
-                SizedBox(
-                  width: double.infinity,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                            builder: (context) => const LoginScreen()),
-                      );
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.white,
-                      padding: const EdgeInsets.symmetric(vertical: 16),
-                    ),
-                    child: Text('Login',
-                        style: AppTextStyles.buttonText
-                            .copyWith(color: Colors.black)),
-                  ),
+                HomeButton(
+                  text: 'Login',
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                          builder: (context) => const LoginScreen()),
+                    );
+                  },
+                  backgroundColor: Colors.white,
+                  textColor: Colors.black,
                 ),
                 const SizedBox(height: 10),
-                SizedBox(
-                  width: double.infinity,
-                  child: OutlinedButton(
-                    onPressed: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                            builder: (context) => const RegisterScreen()),
-                      );
-                    },
-                    style: OutlinedButton.styleFrom(
-                      backgroundColor: Colors.transparent, // Fundo transparente
-                      padding: const EdgeInsets.symmetric(vertical: 16),
-                      side:
-                          const BorderSide(color: Colors.white), // Borda branca
-                    ),
-                    child: Text('Registrar',
-                        style: AppTextStyles.buttonText
-                            .copyWith(color: Colors.black)),
-                  ),
+                HomeButton(
+                  text: 'Registrar',
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                          builder: (context) => const RegisterScreen()),
+                    );
+                  },
+                  backgroundColor: Colors.transparent,
+                  textColor: Colors.black,
+                  borderSide: const BorderSide(color: Colors.white),
+                  buttonType:
+                      ButtonType.outlined, // Especificar o tipo de botão
                 ),
                 const SizedBox(height: 20),
               ],

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'memory_game_screen.dart';
 import 'quiz_screen.dart';
 import 'ranking_screen.dart';
-import 'database_helper.dart';
+import 'services/database_helper.dart';
 import 'login_screen.dart'; // Adicione esta linha
 
 class MenuScreen extends StatefulWidget {

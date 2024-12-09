@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'database_helper.dart';
+import 'services/database_helper.dart';
 
 class RankingScreen extends StatefulWidget {
   const RankingScreen({super.key});

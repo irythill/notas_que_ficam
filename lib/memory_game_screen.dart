@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'dart:async';
-import 'database_helper.dart';
+import 'services/database_helper.dart';
 import 'quiz_screen.dart';
 
 class MemoryGameScreen extends StatefulWidget {
