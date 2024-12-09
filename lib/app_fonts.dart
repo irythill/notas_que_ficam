@@ -17,7 +17,7 @@ class AppTextStyles {
   static const TextStyle titleSmall = TextStyle(
     fontFamily: 'Fredoka',
     fontWeight: FontWeight.bold,
-    fontSize: 24,
+    fontSize: 22,
   );
 
   // Poppins
@@ -27,10 +27,10 @@ class AppTextStyles {
     fontSize: 16,
   );
 
-  static const TextStyle bodyMedium = TextStyle(
+  static const TextStyle buttonText = TextStyle(
     fontFamily: 'Poppins',
     fontWeight: FontWeight.normal,
-    fontSize: 14,
+    fontSize: 16,
   );
 
   static const TextStyle labelMedium = TextStyle(

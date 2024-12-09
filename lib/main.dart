@@ -16,12 +16,11 @@ class MyApp extends StatelessWidget {
       title: 'Notas que Ficam',
       theme: ThemeData(
         primarySwatch: Colors.orange,
-        textTheme: TextTheme(
+        textTheme: const TextTheme(
           displayLarge: AppTextStyles.titleLarge,
           displayMedium: AppTextStyles.titleMedium,
           displaySmall: AppTextStyles.titleSmall,
           bodyLarge: AppTextStyles.bodyLarge,
-          bodyMedium: AppTextStyles.bodyMedium,
           titleMedium: AppTextStyles.labelMedium,
           titleSmall: AppTextStyles.labelSmall,
           labelLarge: AppTextStyles.rockSaltTitle,
@@ -36,14 +35,15 @@ class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
   @override
-  _SplashScreenState createState() => _SplashScreenState();
+  SplashScreenState createState() => SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 5), () {
+      if (!mounted) return;
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder: (context) => const HomeScreen()),
       );
@@ -53,7 +53,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.splashScreenColor,
+      backgroundColor: AppColors.primaryColor,
       body: Center(
         child: Image.asset('assets/images/nqf_logo.png'),
       ),
