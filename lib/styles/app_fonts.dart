@@ -27,6 +27,12 @@ class AppTextStyles {
     fontSize: 16,
   );
 
+  static const TextStyle bodySmall = TextStyle(
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.normal,
+    fontSize: 12,
+  );
+
   static const TextStyle buttonText = TextStyle(
     fontFamily: 'Poppins',
     fontWeight: FontWeight.normal,

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'login_screen.dart';
 import '../services/database_helper.dart';
 import '../widgets/home_button.dart';
 import '../widgets/custom_text_field.dart';
-import 'login_screen.dart';
+import '../widgets/title_and_description.dart';
 import '../styles/app_colors.dart';
 import '../styles/app_fonts.dart';
 
@@ -98,6 +99,7 @@ class RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: const Text('Notas que ficam', style: AppTextStyles.titleSmall),
         backgroundColor: AppColors.primaryColor,
@@ -131,19 +133,10 @@ class RegisterScreenState extends State<RegisterScreen> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          const SizedBox(height: 140), // Espaço acima do título
-                          const Text(
-                            'Registrar-se',
-                            style: AppTextStyles.titleLarge,
-                          ),
-                          const SizedBox(height: 20),
-                          const SizedBox(
-                            width: 220, // Define a largura do texto descritivo
-                            child: Text(
-                              'Para iniciar uma sessão, informe seu e-mail, nickname e senha',
-                              style: AppTextStyles.bodyLarge,
-                              softWrap: true, // Garante quebra de linha
-                            ),
+                          const TitleAndDescription(
+                            title: 'Registrar-se',
+                            description:
+                                'Para iniciar uma sessão, informe um e-mail, nickname e senha',
                           ),
                           const SizedBox(
                               height: 65), // Espaço antes dos campos de entrada
@@ -174,7 +167,7 @@ class RegisterScreenState extends State<RegisterScreen> {
                           ),
                           const SizedBox(height: 10), // Espaço antes do botão
                           HomeButton(
-                            text: 'Login',
+                            text: 'Registrar',
                             onPressed: _register,
                             backgroundColor: AppColors.highlightColor,
                             textColor: Colors.black,

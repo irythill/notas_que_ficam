@@ -46,6 +46,19 @@ class DatabaseHelper {
     return await db.query('users');
   }
 
+  Future<Map<String, dynamic>?> getUser(int id) async {
+    Database db = await database;
+    List<Map<String, dynamic>> results = await db.query(
+      'users',
+      where: 'id = ?',
+      whereArgs: [id],
+    );
+    if (results.isNotEmpty) {
+      return results.first;
+    }
+    return null;
+  }
+
   Future<int> updateUserPoints(int id, int points) async {
     Database db = await database;
     return await db.update(
@@ -61,6 +74,16 @@ class DatabaseHelper {
     return await db.update(
       'users',
       {'nickname': nickname},
+      where: 'id = ?',
+      whereArgs: [id],
+    );
+  }
+
+  Future<int> updateUser(int id, Map<String, dynamic> values) async {
+    Database db = await database;
+    return await db.update(
+      'users',
+      values,
       where: 'id = ?',
       whereArgs: [id],
     );

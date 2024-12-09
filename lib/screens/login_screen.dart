@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'register_screen.dart';
+import 'menu_screen.dart';
 import '../services/database_helper.dart';
 import '../widgets/home_button.dart';
 import '../widgets/custom_text_field.dart';
-import 'register_screen.dart';
-import 'menu_screen.dart';
+import '../widgets/title_and_description.dart';
 import '../styles/app_colors.dart';
 import '../styles/app_fonts.dart';
 
@@ -74,6 +75,7 @@ class LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: const Text('Notas que ficam', style: AppTextStyles.titleSmall),
         backgroundColor: AppColors.primaryColor,
@@ -107,19 +109,10 @@ class LoginScreenState extends State<LoginScreen> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          const SizedBox(height: 140), // Espaço acima do título
-                          const Text(
-                            'Bem-vindo',
-                            style: AppTextStyles.titleLarge,
-                          ),
-                          const SizedBox(height: 20),
-                          const SizedBox(
-                            width: 300, // Define a largura do texto descritivo
-                            child: Text(
-                              'Informe seu e-mail e senha para iniciar sua sessão',
-                              style: AppTextStyles.bodyLarge,
-                              softWrap: true, // Garante quebra de linha
-                            ),
+                          const TitleAndDescription(
+                            title: 'Bem-vindo',
+                            description:
+                                'Informe seu e-mail e senha para iniciar sua sessão',
                           ),
                           const SizedBox(
                               height: 90), // Espaço antes dos campos de entrada

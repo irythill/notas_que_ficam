@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import '../../widgets/home_button.dart';
-import '../../widgets/home_logo.dart';
-import '../../styles/app_colors.dart';
-import '../../styles/app_fonts.dart';
 import 'login_screen.dart';
 import 'register_screen.dart';
+import '../widgets/home_button.dart';
+import '../widgets/home_logo.dart';
+import '../styles/app_colors.dart';
+import '../styles/app_fonts.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
