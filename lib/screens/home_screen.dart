@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '../widgets/home_button.dart';
-import '../widgets/home_logo.dart';
-import '../styles/app_colors.dart';
-import '../styles/app_fonts.dart';
+import '../../widgets/home_button.dart';
+import '../../widgets/home_logo.dart';
+import '../../styles/app_colors.dart';
+import '../../styles/app_fonts.dart';
 import 'login_screen.dart';
 import 'register_screen.dart';
 
@@ -19,7 +19,7 @@ class HomeScreen extends StatelessWidget {
       body: Stack(
         children: [
           Container(
-            color: AppColors.primaryColor, // Definir a cor de fundo aqui
+            color: AppColors.primaryColor,
           ),
           Positioned.fill(
             child: Image.asset(
@@ -28,7 +28,7 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           const Positioned(
-            top: 160, // Ajuste a posição vertical conforme necessário
+            top: 160, // centering home screen bg
             left: 0,
             right: 0,
             child: HomeLogo(),
@@ -45,7 +45,7 @@ class HomeScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 10),
                 const Text(
-                  'Memórias sonoras que ficam na sua mente',
+                  'Memórias sonoras que ficam na sua mente.',
                   style: AppTextStyles.bodyLarge,
                 ),
                 const SizedBox(height: 50),
@@ -57,7 +57,7 @@ class HomeScreen extends StatelessWidget {
                           builder: (context) => const LoginScreen()),
                     );
                   },
-                  backgroundColor: Colors.white,
+                  backgroundColor: AppColors.highlightColor,
                   textColor: Colors.black,
                 ),
                 const SizedBox(height: 10),
@@ -71,11 +71,11 @@ class HomeScreen extends StatelessWidget {
                   },
                   backgroundColor: Colors.transparent,
                   textColor: Colors.black,
-                  borderSide: const BorderSide(color: Colors.white),
+                  borderSide: const BorderSide(color: Colors.black),
                   buttonType:
                       ButtonType.outlined, // Especificar o tipo de botão
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 50),
               ],
             ),
           ),

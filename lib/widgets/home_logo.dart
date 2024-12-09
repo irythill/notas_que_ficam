@@ -9,8 +9,8 @@ class HomeLogo extends StatelessWidget {
     this.width = 250,
     this.height = 250,
     this.topPadding = 0,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

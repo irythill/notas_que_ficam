@@ -24,6 +24,8 @@ flutter:
   assets:
     - assets/images/nqf_logo.png
     - assets/images/home_screen_bg.png
+    - assets/images/login_form.png
+    - assets/images/register_form.png
     - assets/sounds/C.mp3
     - assets/sounds/D.mp3
     - assets/sounds/E.mp3

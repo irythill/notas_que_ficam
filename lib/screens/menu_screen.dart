@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'memory_game_screen.dart';
 import 'quiz_screen.dart';
 import 'ranking_screen.dart';
-import 'services/database_helper.dart';
+import '../services/database_helper.dart';
 import 'login_screen.dart'; // Adicione esta linha
 
 class MenuScreen extends StatefulWidget {
@@ -11,10 +11,10 @@ class MenuScreen extends StatefulWidget {
   const MenuScreen({super.key, required this.userId});
 
   @override
-  _MenuScreenState createState() => _MenuScreenState();
+  MenuScreenState createState() => MenuScreenState();
 }
 
-class _MenuScreenState extends State<MenuScreen> {
+class MenuScreenState extends State<MenuScreen> {
   String _nickname = '';
 
   @override

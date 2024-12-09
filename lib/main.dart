@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'home_screen.dart';
+import 'screens/home_screen.dart'; // Atualizar o caminho da importação
 import 'styles/app_colors.dart';
 import 'styles/app_fonts.dart';
 
@@ -42,10 +42,11 @@ class SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(seconds: 5), () {
-      if (!mounted) return;
+    Future.delayed(const Duration(seconds: 3), () {
       Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (context) => const HomeScreen()),
+        MaterialPageRoute(
+            builder: (context) =>
+                const HomeScreen()), // Certifique-se de que HomeScreen está importado corretamente
       );
     });
   }
