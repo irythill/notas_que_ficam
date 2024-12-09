@@ -1,0 +1,59 @@
+name: notas_que_ficam
+description: "A new Flutter project."
+publish_to: 'none' # Remove this line if you wish to publish to pub.de
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.4
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  sqflite: ^2.0.0+4
+  path: ^1.8.0
+  audioplayers: ^0.20.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/nqf_logo.png
+    - assets/images/home_screen_bg.png
+    - assets/sounds/C.mp3
+    - assets/sounds/D.mp3
+    - assets/sounds/E.mp3
+    - assets/sounds/F.mp3
+    - assets/sounds/G.mp3
+    - assets/sounds/A.mp3
+    - assets/sounds/B.mp3
+    - assets/sounds/splash_song.mp3
+  fonts:
+    - family: Fredoka
+      fonts:
+        - asset: assets/fonts/fredoka/Fredoka-Light.ttf
+          weight: 300
+        - asset: assets/fonts/fredoka/Fredoka-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/fredoka/Fredoka-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/fredoka/Fredoka-Bold.ttf
+          weight: 700
+    - family: Poppins
+      fonts: 
+        - asset: assets/fonts/poppins/Poppins-Light.ttf
+          weight: 300
+        - asset: assets/fonts/poppins/Poppins-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/poppins/Poppins-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/poppins/Poppins-Bold.ttf
+          weight: 700
+    - family: Rock Salt
+      fonts:
+        - asset: assets/fonts/rocksalt/RockSalt-Regular.ttf
+          weight: 400
