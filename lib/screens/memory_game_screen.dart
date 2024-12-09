@@ -75,7 +75,12 @@ class _MemoryGameScreenState extends State<MemoryGameScreen> {
       _selectedCards.add(index);
     });
 
-    await _audioCache.play('${_shuffledCards[index]}.mp3');
+    // Verificar se o arquivo de som existe antes de tentar reproduzi-lo
+    try {
+      await _audioCache.play('${_shuffledCards[index]}.mp3');
+    } catch (e) {
+      print('Erro ao reproduzir som: $e');
+    }
 
     if (_selectedCards.length == 2) {
       _attempts++;
